@@ -28,10 +28,19 @@ def is_prime(num)->bool:
     # else:
     #     return False
     return True
-n=int(input("Input Number:"))
+# n=int(input("Input Number:"))
+#
+# if is_prime(n):
+#     print(f"{n} is prime number")
+# else:
+#     print(f"{n} is not prime number")
 
-if is_prime(n):
-    print(f"{n} is prime number")
-else:
-    print(f"{n} is not prime number")
-
+firstnum=int(input("Input First Number:"))
+secondnum=int(input("Input Second Number:"))
+cnt=firstnum
+prime=[]
+index=0
+while cnt<=secondnum:
+    if is_prime(cnt):
+        print(f"{cnt}")
+    cnt=cnt+1
