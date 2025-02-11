@@ -1,8 +1,10 @@
 #1) for-> while
 #2) while로 구간 소수를 출력
 #3) **대신 pow함수
-import math
+#4)**연산자, pow 함수를 사용하지 않고 커스텀 함수를 만들어 동작되도록 한다. my_pow
 
+def my_pow(num):
+    return num*num
 
 def is_prime(num)->bool:
     """
@@ -12,7 +14,7 @@ def is_prime(num)->bool:
     """
     if num >= 2:
         i=2
-        while math.pow(i,2)<=num:
+        while my_pow(i)<=num:
             if num % i == 0:
 
                 return False
@@ -44,5 +46,7 @@ cnt=firstnum
 
 while cnt<=secondnum:
     if is_prime(cnt):
-        print(f"{cnt}")
+
+        print(f"{cnt}",end=' ')
+
     cnt=cnt+1
