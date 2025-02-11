@@ -39,11 +39,13 @@ def is_prime(num)->bool:
 #     print(f"{n} is prime number")
 # else:
 #     print(f"{n} is not prime number")
+number=input("숫자 두개 입력:").split(' ')
+firstnum=int(number[0])
+secondnum=int(number[1])
 
-firstnum=int(input("Input First Number:"))
-secondnum=int(input("Input Second Number:"))
+if firstnum>secondnum:
+    firstnum,secondnum=secondnum,firstnum
 cnt=firstnum
-
 while cnt<=secondnum:
     if is_prime(cnt):
 
