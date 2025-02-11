@@ -3,8 +3,17 @@
 #3) **대신 pow함수
 #4)**연산자, pow 함수를 사용하지 않고 커스텀 함수를 만들어 동작되도록 한다. my_pow
 
-def my_pow(num):
-    return num*num
+def my_pow(num,i):
+    if i>0:
+        a=0
+        while a<i:
+            num=num*num
+            return num
+    else:
+        a=0
+        while a<i:
+            num=1/num
+            return num
 
 def is_prime(num)->bool:
     """
@@ -14,7 +23,7 @@ def is_prime(num)->bool:
     """
     if num >= 2:
         i=2
-        while my_pow(i)<=num:
+        while my_pow(i,2)<=num:
             if num % i == 0:
 
                 return False
