@@ -1,2 +1,3 @@
 name=input("Name:")
-print(f"Hi {name}~")#alt shift f10
+print(f"Hi {name}~")
+#alt shift f10
