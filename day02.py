@@ -1,6 +1,9 @@
 #1) for-> while
 #2) while로 구간 소수를 출력
 #3) **대신 pow함수
+import math
+
+
 def is_prime(num)->bool:
     """
     if num is prime number->return True/if num is not prime number->return False
@@ -9,7 +12,7 @@ def is_prime(num)->bool:
     """
     if num >= 2:
         i=2
-        while i<=int(num**0.5):
+        while math.pow(i,2)<=num:
             if num % i == 0:
 
                 return False
@@ -38,8 +41,7 @@ def is_prime(num)->bool:
 firstnum=int(input("Input First Number:"))
 secondnum=int(input("Input Second Number:"))
 cnt=firstnum
-prime=[]
-index=0
+
 while cnt<=secondnum:
     if is_prime(cnt):
         print(f"{cnt}")
