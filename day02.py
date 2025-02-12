@@ -10,9 +10,10 @@ def my_pow(num,i):
     :param i:exponent
     :return:result
     """
+    result = 1
     if i>=0:
 
-        result=1
+
         e = int(i)
         f = i - e
 
@@ -23,11 +24,23 @@ def my_pow(num,i):
             result = result * math.exp(f * math.log(num))
         return result
 
-    else:
+    elif i<0:
             a=0
-            while a<i:
-                num=1/num
-                return num
+            j=-i
+            # while a<j:
+            #     result=result/num
+            #     a=a+1
+            # return result
+            e = int(j)
+            f = j - e
+
+            for _ in range(e):  # for k in range(e):
+                result = result * num
+
+            if f > 0:
+                result = result * math.exp(f * math.log(num))
+
+            return 1/result
 
 def is_prime(num)->bool:
     """
@@ -62,7 +75,7 @@ def is_prime(num)->bool:
 #     print(f"{n} is prime number")
 # else:
 #     print(f"{n} is not prime number")
-print(my_pow(4,0.5))
+print(my_pow(2,-0.5))
 number=input("숫자 두개 입력:").split(' ')
 firstnum=int(number[0])
 secondnum=int(number[1])
