@@ -21,7 +21,7 @@ def my_pow(num,i):
         return result
 
     elif i<0:
-            a=0
+
             j=-i
             # while a<j:
             #     result=result/num
