@@ -1,7 +1,7 @@
 #메뉴 삭제 추가에 대응되는 코드 추가
 import random
 def print_menu(num):
-    print(f'{drinks[a]}에 어울리는 안주는 {drinks_foods[a]} 입니다')
+    print(f'{drinks[num]}에 어울리는 안주는 {drinks_foods[num]} 입니다')
 # drinks_foods=[['위스키','초콜릿'],['와인','치즈'],['소주','삼겹살'],['고량주','양꼬치']]
 drinks=['위스키','와인','소주','고량주']
 drinks_foods=['초콜릿','치즈','삼겹살','양꼬치']
@@ -25,7 +25,7 @@ while True:
         print_menu(a)
     elif int(menu)==len(drinks)+1:
         num=random.randint(0,len(drinks)-1)
-        print(f'{drinks_foods[num][0]}에 어울리는 안주는 {drinks_foods[num][1]} 입니다')
+        print_menu(num)
     elif int(menu)==len(drinks)+2:
         print(f'다음에 또 오세요')
         break
