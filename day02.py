@@ -2,18 +2,32 @@
 #2) while로 구간 소수를 출력
 #3) **대신 pow함수
 #4)**연산자, pow 함수를 사용하지 않고 커스텀 함수를 만들어 동작되도록 한다. my_pow
-
+import math
 def my_pow(num,i):
-    if i>0:
-        a=0
-        while a<i:
-            num=num*num
-            return num
+    """
+
+    :param num:base number
+    :param i:exponent
+    :return:result
+    """
+    if i>=0:
+
+        result=1
+        e = int(i)
+        f = i - e
+
+        for _ in range(e):  # for k in range(e):
+            result = result * num
+
+        if f > 0:
+            result = result * math.exp(f * math.log(num))
+        return result
+
     else:
-        a=0
-        while a<i:
-            num=1/num
-            return num
+            a=0
+            while a<i:
+                num=1/num
+                return num
 
 def is_prime(num)->bool:
     """
@@ -48,6 +62,7 @@ def is_prime(num)->bool:
 #     print(f"{n} is prime number")
 # else:
 #     print(f"{n} is not prime number")
+print(my_pow(4,0.5))
 number=input("숫자 두개 입력:").split(' ')
 firstnum=int(number[0])
 secondnum=int(number[1])
