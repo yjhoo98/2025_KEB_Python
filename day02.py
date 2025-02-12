@@ -50,7 +50,7 @@ def is_prime(num)->bool:
     """
     if num >= 2:
         i=2
-        while my_pow(i,2)<=num:
+        while i<=int(my_pow(num,0.5)):
             if num % i == 0:
 
                 return False
