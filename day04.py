@@ -9,11 +9,7 @@ def descript_func(func):
     return inner_desc
 
 def time_decorator(func):
-    """
 
-    :param func:function
-    :return:time
-    """
     def wrapper(*arg):
         s=time.time()
         r=func(*arg)
@@ -22,8 +18,8 @@ def time_decorator(func):
         return r
     return wrapper
 
-@time_decorator
-@descript_func
+# @time_decorator
+# @descript_func
 def factorial_repetition(n)->int:
     """
 
@@ -36,7 +32,8 @@ def factorial_repetition(n)->int:
     return result
 number =int(input())
 # s=time.time()
-print(f"{number}!={factorial_repetition(number)}")
+t=descript_func(time_decorator(factorial_repetition))
+print(f"{number}!={t(number)}")
 # e=time.time()
 # print(e-s)
 
