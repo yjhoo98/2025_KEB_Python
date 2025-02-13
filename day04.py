@@ -1,12 +1,12 @@
 #이중 decorator 적용/성능측정/discription/factorial
 import time
-def discript_func(func):
-    def inner_disc(*args):
+def descript_func(func):
+    def inner_desc(*args):
         print(func.__name__)
         print(func.__doc__)
         r = func(*args)
         return r
-    return inner_disc
+    return inner_desc
 
 def time_decorator(func):
     """
@@ -23,7 +23,7 @@ def time_decorator(func):
     return wrapper
 
 @time_decorator
-@discript_func
+@descript_func
 def factorial_repetition(n)->int:
     """
 
