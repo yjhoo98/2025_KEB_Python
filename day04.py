@@ -9,7 +9,7 @@ def time_decorator(func):
         print(f"{e-s}초 소요")
         return r
     return wrapper
-@time_decorator
+#@time_decorator
 def factorial_repetition(n)->int:
     result=1
     for i in range(2,n+1):
@@ -20,3 +20,7 @@ number =int(input())
 print(f"{number}!={factorial_repetition(number)}")
 # e=time.time()
 # print(e-s)
+number=int(input())
+f1=time_decorator(factorial_repetition)
+print(f'{number}!={factorial_repetition(number)}')
+print(f'{number}!={f1(number)}')
