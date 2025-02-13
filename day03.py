@@ -2,28 +2,31 @@
 import random
 def print_menu(num):
     print(f'{drinks[num]}에 어울리는 안주는 {drinks_foods[num]} 입니다')
-
+# d_s_p={"위스키":['초콜릿',50_000]}
+# print(d_s_p["위스키"][1])
 drinks=['위스키','와인','소주','고량주']
 drinks_foods=['초콜릿','치즈','삼겹살','양꼬치']
-
+prices=[50000,30000,5000,7500]
 while True:
     ask = input(f'1)메뉴 추가 2)메뉴 삭제 3)변경없음:')
     if int(ask)==1:
-        new_menu = input("주류와 안주 입력:").split(' ')
-        if new_menu[0] not in drinks:
+        new_menu = input("주류와 안주 가격 입력:").split(' ')
+        if new_menu[0]  in drinks:
             print('이미 있는 메뉴')
             continue
         else:
             drinks.append(new_menu[0])
             drinks_foods.append(new_menu[1])
+            prices.append(int(new_menu[2]))
     elif int(ask)==2:
-        del_menu = input("주류와 안주 입력:").split(' ')
+        del_menu = input("주류와 안주 가격 입력:").split(' ')
         if del_menu[0] not in drinks:
             print('존재하지 않는 메뉴')
             continue
         else:
             drinks.remove(del_menu[0])
             drinks_foods.remove(del_menu[1])
+            prices.remove(int(del_menu[2]))
 
     elif int(ask)==3:
         print(f'변경없음.')
