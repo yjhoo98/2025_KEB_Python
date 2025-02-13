@@ -1,5 +1,16 @@
 #이중 decorator 적용/성능측정/discription/factorial
 import time
+def log_decorator(func):
+    def wrapper(*args,**kwargs):
+        print(f"Function Name:{func.__name__}")
+        print(f"Function Arguements:{args}")
+        print(f"Function Keyword Arguements:{kwargs}")
+        result=func(*args,**kwargs)
+        return result
+    return wrapper
+
+
+
 def descript_func(func):
     def inner_desc(*args):
         print(func.__name__)
@@ -7,33 +18,11 @@ def descript_func(func):
         r = func(*args)
         return r
     return inner_desc
-
-def time_decorator(func):
-
-    def wrapper(*arg):
-        s=time.time()
-        r=func(*arg)
-        e=time.time()
-        print(f"{e-s}초 소요")
-        return r
-    return wrapper
-
-# @time_decorator
-# @descript_func
-def factorial_repetition(n)->int:
-    """
-
-    :param n:integer number
-    :return:n!
-    """
-    result=1
-    for i in range(2,n+1):
-        result=result*i
-    return result
-number =int(input())
-# s=time.time()
-t=descript_func(time_decorator(factorial_repetition))
-print(f"{number}!={t(number)}")
-# e=time.time()
-# print(e-s)
-
+@log_decorator
+def greet(name,greeting="안녕하세요",age=0):
+    return f"{greeting},{name}"
+print(greet("인하"))
+print(greet("인상","안녕"))
+print(greet("James","HELLO"))
+print(greet("Gonzales",greeting="Hola"))
+print(greet("Nakamura",greeting="Gonniziwa",age=29))
