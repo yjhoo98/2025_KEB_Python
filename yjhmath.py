@@ -19,3 +19,5 @@ def my_fibonacci_recursion(n):
         return 1
     else:
         return my_fibonacci_recursion(n-1)+my_fibonacci_recursion(n-2)
+if __name__!="__main__":
+    print(f'yjhmath.py실행')
