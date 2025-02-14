@@ -1,4 +1,4 @@
-#이중 decorator 적용/성능측정/discription/factorial
+# 이중 decorator 적용/성능측정/discription/factorial
 
 def log_decorator(func):
     def wrapper(*args,**kwargs):
@@ -26,3 +26,4 @@ print(greet("인상","안녕"))
 print(greet("James","HELLO"))
 print(greet("Gonzales",greeting="Hola"))
 print(greet("Nakamura",greeting="Gonniziwa",age=29))
+

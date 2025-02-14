@@ -32,6 +32,6 @@ def boom_recursion(n):
         print(f"boom")
     else:
         print(f'{n}',end=' ')
-        return boom_recursion(n-1)
+    return boom_recursion(n-1)
 boom_repetition(int(input("num:")))
 boom_recursion(int(input("num:")))
